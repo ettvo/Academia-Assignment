@@ -171,22 +171,25 @@ def addEdge(G: nx.Graph, x: int):
         G.add_edge(i, i + 10 if i + 10 < x else i - 7, weight=(rand.randint(950, 1000)))
         G.add_edge(i, i + 5 if i + 5 < x else i - 4, weight = (rand.randint(650, 1000)))
         G.add_edge(i, i + 3 if i + 3 < x else i - 2, weight = (rand.randint(650, 1000)))
-    print(sum(d for u, w, d in G.edges(data='weight')))
+    # print(sum(d for u, w, d in G.edges(data='weight')))
     # print(set(G))
     
    
 def main():
-    G = nx.empty_graph(N_SMALL)
-    # addEdge(G, N_SMALL)
-    # write_input(G, 'small.in')
+    G = nx.empty_graph(N_SMALL - 1)
+    addEdge(G, N_SMALL - 1)
+    print(G.number_of_nodes())
+    write_input(G, 'small.in')
 
-    G = nx.empty_graph(N_MEDIUM)
-    # addEdge(G, N_MEDIUM)
-    # write_input(G, 'medium.in')
+    G = nx.empty_graph(N_MEDIUM - 1)
+    addEdge(G, N_MEDIUM - 1)
+    print(G.number_of_nodes())
+    write_input(G, 'medium.in')
 
-    G = nx.empty_graph(N_LARGE)
-    # addEdge(G, N_LARGE)
-    # write_input(G, 'large.in')  
+    G = nx.empty_graph(N_LARGE - 1)
+    addEdge(G, N_LARGE - 1)
+    print(G.number_of_nodes())
+    write_input(G, 'large.in')  
     
 
 if __name__ == "__main__":
